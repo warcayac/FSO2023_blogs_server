@@ -1,0 +1,57 @@
+### Get all blogs: OK
+GET http://localhost:3001/api/blogs HTTP/1.1
+
+
+### Get one blog: OK
+GET http://localhost:3001/api/blogs/65ccf42ccc5155de682b7ca2 HTTP/1.1
+### Get one blog: not exist
+GET http://localhost:3001/api/blogs/75b86f4e8c300914ef38b60c HTTP/1.1
+### Get one blog: Bad
+GET http://localhost:3001/api/blogs/65b8576e0 HTTP/1.1
+
+
+### Add 10 fake data: OK
+POST http://localhost:3001/api/blogs/generateSample HTTP/1.1
+
+
+### Add one blog: OK
+POST http://localhost:3001/api/blogs HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY1YzZkZDgxYjlmZWUxMGNlOTZjYjg1YiIsInVzZXJuYW1lIjoicm9vdCIsImlhdCI6MTcwNzc5NzkxMiwiZXhwIjoxNzA3ODAxNTEyfQ.GM9Tnni9FdoZaSt79aq-hP2CTVPw5_9nCTueTW6vNHQ
+
+{
+  "title": "BK Love - Windstruck",
+  "author": "123-7890",
+  "url": "http://www.saintseiya.com"
+}
+### Add one blog
+POST http://localhost:3001/api/blogs HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "William AC",
+  "author": "123-7890",
+  "url": "http://www.william.com",
+}
+### Add one blog
+POST http://localhost:3001/api/blogs HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "William AC",
+  "author": "123-7890",
+  "url": "http://www.william.com"
+}
+
+### Update likes of one blog: OK
+PATCH  http://localhost:3001/api/blogs/65b865a18296b978371bc64a HTTP/1.1
+Content-Type: application/json
+
+{
+  "likes": 77
+}
+
+
+### Delete one blog: OK
+DELETE http://localhost:3001/api/blogs/65ca198804c9f5a1d0fa389a HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjY1YzZkZTA5NmEzOGQ1MDI3NDE5ZjQzOSIsInVzZXJuYW1lIjoid2FyY2F5YWMiLCJpYXQiOjE3MDc4MDA0NjIsImV4cCI6MTcwNzgwNDA2Mn0.zjMV2LCtHZiZUzctG2an0tLWLCtBcbM_2-YSfqB3oV8

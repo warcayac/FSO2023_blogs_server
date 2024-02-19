@@ -1,0 +1,39 @@
+### Login: OK
+POST http://localhost:3001/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "sekret"
+}
+### Login: OK
+POST http://localhost:3001/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "warcayac",
+  "password": "123456789"
+}
+### Login: fail
+POST http://localhost:3001/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "supersecret"
+}
+### Login: missing property
+POST http://localhost:3001/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "root"
+}
+### Login: body malformatted
+POST http://localhost:3001/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "sekret",
+}

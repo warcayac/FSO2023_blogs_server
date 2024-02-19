@@ -1,0 +1,23 @@
+{
+  "name": "blogs_server",
+  "version": "1.0.50",
+  "module": "src/index.js",
+  "dependencies": {
+    "@bogeychan/elysia-logger": "^0.0.17",
+    "@elysiajs/cors": "^0.8.0",
+    "ansis": "^2.2.0",
+    "elysia": "latest",
+    "jose": "^5.2.2",
+    "mongoose": "^8.1.1",
+    "pino-pretty": "^10.3.1"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test bun test ./test/**.test.ts",
+    "dev": "NODE_ENV=development bun --env-file=.env run --watch src/index.ts",
+    "start": "NODE_ENV=production bun --env-file=.env run src/index.ts"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "@types/bun": "^1.0.5"
+  }
+}
